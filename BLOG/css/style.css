@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    transition: scroll-behavior 0.5s ease;
+}
+
+header {
+    display: flex;
+    padding: 0;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    background-color: #fff;
+    padding-right: 20px;
+    z-index: 999;
+    transition: background 250ms ease-in;
+}
+
+.logo-name {
+    font-size: 1.5rem;
+    margin: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.logo-name a {
+    text-decoration: none;
+    color: initial;
+}
+
+.logo-name.nav-scroll a {
+    color: #fff;
+}
+
+.nav-contents {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    margin-left: 2em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    padding: 1em 1.5rem;
+    display: block;
+    position: relative;
+    transition: color 250ms ease-in;
+}
+
+.nav-links a::before {
+    content: " ";
+    width: 10%;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    top: 2.5em;
+    transition: width 0.25s linear;
+}
+
+.nav-links a:hover:before {
+    width: 60%;
+    transition: width 0.25s linear;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button span.bar {
+    position: relative;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+    transition: all 0.25s ease-in-out;
+}
+
+.toggle-button.toggle {
+    top: 2.5em;
+}
+
+.toggle-button.toggle .bar {
+    position: absolute;
+}
+
+.toggle-button.toggle #bar1 {
+    transform: rotate(45deg);
+    transition: all 0.25s linear;
+}
+
+.toggle-button.toggle #bar2 {
+    opacity: 0;
+    transition: all 0.25s linear;
+}
+
+.toggle-button.toggle #bar3 {
+    transform: rotate(-45deg);
+    transition: all 0.25s linear;
+}
+
+.nav-links a.blog {
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-links a.blog::before {
+    display: none;
+}
+
+.hero-container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container h1 {
+    font-size: 5em;
+}
+
+.experience-container {
+    width: 100%;
+    padding-top: 10em;
+    top: 9rem;
+    position: relative;
+    margin-bottom: 20em;
+}
+
+.experience-container h1 {
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+
+.recommend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10em;
+}
+
+.recommend-container .head {
+    width: 100%;
+    text-align: center;
+    line-height: 1.7em;
+    margin-bottom: 50px;
+}
+
+.recommend {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    width: 100%;
+    background: #000;
+    min-height: 170px;
+    padding: 1em;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-content a {
+    color: rgb(99, 98, 98);
+    transition: color 0.25s linear;
+}
+
+.footer-content .contact {
+    margin-bottom: 30px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.contact a {
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: #fff;
+    transition: color 0.25s linear;
+}
+
+.social-icons a {
+    font-size: 2em;
+    margin: 1em;
+}
+
+.contact a::before {
+    content: '\f0e0';
+    font-family: "Font Awesome 5 Free";
+    position: relative;
+    margin-right: 15px;
+}
+
+
+/*Media Queries*/
+
+@media screen and (min-width:991px) {
+    nav.navbar.nav-scroll {
+        background: #000;
+        color: #fff;
+        position: fixed;
+        transition: background 250ms ease-in;
+    }
+    .target.nav-scroll {
+        color: white;
+    }
+    .target.nav-scroll:hover:before,
+    .target.nav-scroll::before {
+        background: #fff;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 990px) {
+    .nav-links a:hover,
+    .nav-links a:focus,
+    .nav-links a:active {
+        background-color: #333;
+        color: #fff;
+        transition: all 0.25s linear;
+    }
+    .nav-links a::before {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .navbar {
+        padding-right: 0px;
+    }
+    .nav-links {
+        padding: 1em;
+    }
+    .nav-links a {
+        border-radius: 3px;
+    }
+    .logo-name {
+        margin-left: 2.4em;
+    }
+    .footer-content .social-icons a {
+        margin: 0;
+        margin-right: 0.5em;
+    }
+    .experience-container {
+        padding-top: 10%;
+    }
+    .about-container {
+        padding-top: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: flex;
+    }
+    .nav-contents {
+        display: none;
+    }
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links {
+        padding: 1em;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-contents {
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        transition: height 0.5s ease;
+        transform-origin: top;
+        height: 0%;
+    }
+    .nav-contents.active {
+        display: flex;
+        transition: height 0.5s ease;
+        height: 100%;
+    }
+    .nav-contents a::before {
+        display: none;
+    }
+    .hero-container {
+        align-items: center;
+        text-align: center;
+    }
+    .nav-contents a {
+        color: #fff;
+    }
+    .nav-links {
+        margin: 0;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: #fff;
+        color: #000;
+    }
+    .hero-container {
+        max-height: 100vh;
+    }
+    .experience-container {
+        padding-top: 10%;
+    }
+    .desc-container {
+        padding-top: 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-container {
+        height: 100vh;
+    }
+}
